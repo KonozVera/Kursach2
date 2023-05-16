@@ -36,12 +36,17 @@ namespace Kursach2
         {
             int Key = Convert.ToInt32(index_textBox.Text);
             //Library.Pass_Book(books, client)
-            Library.Delete_Book(Key);
-            MessageBox.Show("Книгу успешно удалили!");
-            this.Close();
-            th = new Thread(openMenu);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            if (Library.Delete_Book(Key))
+            {
+                MessageBox.Show("Книгу успешно удалили!");
+                this.Close();
+                th = new Thread(openMenu);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+            }
+            else
+                MessageBox.Show("Книга есть у клиентов!");
+            
         }
 
         private void index_textBox_Enter(object sender, EventArgs e)

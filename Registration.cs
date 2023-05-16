@@ -29,11 +29,15 @@ namespace Kursach2
             }
 
             if (!string.IsNullOrWhiteSpace(login_in_reg_Field.Text) && !Library.IsTrue(login_in_reg_Field.Text))
+            {
                 switch (employmentComboBox1.Items[employmentComboBox1.SelectedIndex])
                 {
                     case "TEACHER":
                         if (login_in_reg_Field.Text[0] == 'T')
+                        {
+                            
                             this.DialogResult = DialogResult.OK;
+                        }
                         break;
                     case "STUDENT":
                         if (login_in_reg_Field.Text[0] == 'S')
@@ -43,9 +47,13 @@ namespace Kursach2
                         break;
 
                 }
-            errorProvider1.SetError(regButton, "Произошла ошибка!");
-            Clients clients = new Clients(nameBox.Text, surnameBox.Text, login_in_reg_Field.Text, (Roles)employmentComboBox1.SelectedIndex);
-            Library.Add_Client(clients);
+                errorProvider1.SetError(regButton, "Произошла ошибка!");
+            }
+            else
+            {
+                Clients clients = new Clients(nameBox.Text, surnameBox.Text, login_in_reg_Field.Text, (Roles)employmentComboBox1.SelectedIndex);
+                Library.Add_Client(clients);
+            }
         }
 
         private void login_in_reg_Field_Enter(object sender, EventArgs e)

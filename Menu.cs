@@ -87,5 +87,13 @@ namespace Kursach2
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
+        
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            //this.Load += new EventHandler(Menu_Load);
+            this.listBox1.DataSource = Library.Clients.Values.ToList();
+            //listBox1 = Clients.ToString.Add(sender);
+            //string listbox1 = Library.Clients.ToString();
+        }   
     }
 }

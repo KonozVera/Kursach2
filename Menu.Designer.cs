@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.fonPanel = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.add_book_Button = new System.Windows.Forms.Button();
             this.return_book_Button = new System.Windows.Forms.Button();
             this.delete_book_Button = new System.Windows.Forms.Button();
@@ -42,6 +43,7 @@
             // fonPanel
             // 
             this.fonPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(70)))), ((int)(((byte)(176)))));
+            this.fonPanel.Controls.Add(this.listBox1);
             this.fonPanel.Controls.Add(this.add_book_Button);
             this.fonPanel.Controls.Add(this.return_book_Button);
             this.fonPanel.Controls.Add(this.delete_book_Button);
@@ -51,10 +53,20 @@
             this.fonPanel.Controls.Add(this.libraryLabel);
             this.fonPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fonPanel.Location = new System.Drawing.Point(0, 0);
-            this.fonPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fonPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fonPanel.Name = "fonPanel";
-            this.fonPanel.Size = new System.Drawing.Size(600, 366);
+            this.fonPanel.Size = new System.Drawing.Size(800, 450);
             this.fonPanel.TabIndex = 1;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.HorizontalScrollbar = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(12, 262);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(776, 164);
+            this.listBox1.TabIndex = 8;
             // 
             // add_book_Button
             // 
@@ -62,10 +74,10 @@
             this.add_book_Button.FlatAppearance.BorderSize = 0;
             this.add_book_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_book_Button.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.add_book_Button.Location = new System.Drawing.Point(406, 143);
-            this.add_book_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.add_book_Button.Location = new System.Drawing.Point(541, 176);
+            this.add_book_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.add_book_Button.Name = "add_book_Button";
-            this.add_book_Button.Size = new System.Drawing.Size(167, 37);
+            this.add_book_Button.Size = new System.Drawing.Size(223, 46);
             this.add_book_Button.TabIndex = 7;
             this.add_book_Button.Text = "Добавить книгу";
             this.add_book_Button.UseVisualStyleBackColor = false;
@@ -77,10 +89,10 @@
             this.return_book_Button.FlatAppearance.BorderSize = 0;
             this.return_book_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.return_book_Button.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.return_book_Button.Location = new System.Drawing.Point(9, 213);
-            this.return_book_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.return_book_Button.Location = new System.Drawing.Point(283, 91);
+            this.return_book_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.return_book_Button.Name = "return_book_Button";
-            this.return_book_Button.Size = new System.Drawing.Size(167, 37);
+            this.return_book_Button.Size = new System.Drawing.Size(223, 46);
             this.return_book_Button.TabIndex = 5;
             this.return_book_Button.Text = "Вернуть книгу";
             this.return_book_Button.UseVisualStyleBackColor = false;
@@ -92,10 +104,10 @@
             this.delete_book_Button.FlatAppearance.BorderSize = 0;
             this.delete_book_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_book_Button.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.delete_book_Button.Location = new System.Drawing.Point(406, 74);
-            this.delete_book_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.delete_book_Button.Location = new System.Drawing.Point(541, 91);
+            this.delete_book_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.delete_book_Button.Name = "delete_book_Button";
-            this.delete_book_Button.Size = new System.Drawing.Size(167, 37);
+            this.delete_book_Button.Size = new System.Drawing.Size(223, 46);
             this.delete_book_Button.TabIndex = 4;
             this.delete_book_Button.Text = "Удалить книгу";
             this.delete_book_Button.UseVisualStyleBackColor = false;
@@ -107,10 +119,10 @@
             this.burn_book_Button.FlatAppearance.BorderSize = 0;
             this.burn_book_Button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.burn_book_Button.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.burn_book_Button.Location = new System.Drawing.Point(9, 143);
-            this.burn_book_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.burn_book_Button.Location = new System.Drawing.Point(12, 176);
+            this.burn_book_Button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.burn_book_Button.Name = "burn_book_Button";
-            this.burn_book_Button.Size = new System.Drawing.Size(167, 37);
+            this.burn_book_Button.Size = new System.Drawing.Size(223, 46);
             this.burn_book_Button.TabIndex = 3;
             this.burn_book_Button.Text = "Записать книгу";
             this.burn_book_Button.UseVisualStyleBackColor = false;
@@ -122,10 +134,10 @@
             this.regButton.FlatAppearance.BorderSize = 0;
             this.regButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.regButton.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.regButton.Location = new System.Drawing.Point(9, 74);
-            this.regButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.regButton.Location = new System.Drawing.Point(12, 91);
+            this.regButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.regButton.Name = "regButton";
-            this.regButton.Size = new System.Drawing.Size(167, 37);
+            this.regButton.Size = new System.Drawing.Size(223, 46);
             this.regButton.TabIndex = 2;
             this.regButton.Text = "Регистрация";
             this.regButton.UseVisualStyleBackColor = false;
@@ -136,8 +148,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(16, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(21, 60);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 28);
             this.label1.TabIndex = 1;
@@ -148,8 +159,7 @@
             this.libraryLabel.AutoSize = true;
             this.libraryLabel.Font = new System.Drawing.Font("Nirmala UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.libraryLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.libraryLabel.Location = new System.Drawing.Point(147, 7);
-            this.libraryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.libraryLabel.Location = new System.Drawing.Point(196, 9);
             this.libraryLabel.Name = "libraryLabel";
             this.libraryLabel.Size = new System.Drawing.Size(424, 31);
             this.libraryLabel.TabIndex = 0;
@@ -157,14 +167,15 @@
             // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.fonPanel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Menu";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.fonPanel.ResumeLayout(false);
             this.fonPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -181,6 +192,7 @@
         private System.Windows.Forms.Button regButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label libraryLabel;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 

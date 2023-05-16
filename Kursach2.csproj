@@ -126,6 +126,8 @@
       <DependentUpon>ReturnBook.cs</DependentUpon>
     </Compile>
     <Compile Include="Serialization.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="tcp-client.cs" />
     <EmbeddedResource Include="AddBooks.resx">
       <DependentUpon>AddBooks.cs</DependentUpon>
     </EmbeddedResource>

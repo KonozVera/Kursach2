@@ -36,12 +36,17 @@ namespace Kursach2
             Books.Add(book1);
             return true;
         }
-        public static void Delete_Book(int key)
+        public static bool Delete_Book(int key)
         {
             for (int j = 0; j < books.Count; j++)
             {
                 if (books[j].Key == key)
                 {
+                    if (NoHand(books[j]))
+                    {
+                        return false;
+                    }
+
                     if (books[j].Number_of_copies < 1)
                     {
                         Books.Remove(books[j]);
@@ -55,6 +60,7 @@ namespace Kursach2
                 }
             }
 
+            return true;
         }
 
 
@@ -137,19 +143,15 @@ namespace Kursach2
             DateTime returning_book = DateTime.Today;
             foreach (var book1 in Library.books)
             {
-                if (clients.ContainsKey(book.Key))
+                if (book.Key == book1.Key)
                 {
-
-                    if (book.Key == book1.Key)
+                    book.Number_of_copies += 1;
+                    foreach (var recording in client.Carta.Recordings)
                     {
-                        book.Number_of_copies += 1;
-                        foreach (var recording in client.Carta.Recordings)
+                        if (recording.Books.Name.Equals(book.Name))
                         {
-                            if (recording.Books.Name.Equals(book.Name))
-                            {
-                                recording.IsAvailable = true;
-                                flag = false;
-                            }
+                            recording.IsAvailable = true;
+                            flag = false;
                         }
                     }
                 }
@@ -164,6 +166,22 @@ namespace Kursach2
                 Library.Add_Book(books.Key, books.name, books.author, books.date_of_publishing, books.Number_of_copies + 1);
                 Library.Pass(books, client);
             }
+        }
+
+        public static bool NoHand(Books books)
+        {
+            foreach(var client in clients)
+            {
+                foreach(var recording in client.Value.Carta.Recordings)
+                {
+                    if (recording.Books.name.Equals(books.name))
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public static bool IsTrue(string number)

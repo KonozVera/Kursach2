@@ -10,6 +10,7 @@ namespace Kursach2
     {
         public static void Serialisation(Dictionary<int, Clients> cl, List<Books> b)
         {
+
             DataContractJsonSerializer F_Clients = new DataContractJsonSerializer(typeof(Dictionary<int, Clients>));
             using (FileStream fs1 = new FileStream("clients.json", FileMode.Create))
             {

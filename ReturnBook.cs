@@ -84,7 +84,7 @@ namespace Kursach2
             checkedListBox1.Items.Clear();
             string login = login_in_find_Field.Text;
             Clients client = Library.GetClient(login);
-
+           // tcp_client.Send("AddClient",client);
             if (client is null)
             {
                 return;
