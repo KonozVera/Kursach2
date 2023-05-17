@@ -17,8 +17,10 @@ namespace Kursach2
             //{
                //tcp_client.tcp_Client.Connect();
                 var data = Serialization.Deserialize();
-                //var dict = data.Item1;
-                //var element = dict[3];
+                var dict = data.Item1;
+            foreach (var item in dict)
+            {
+            }
                 //for (int i1 = 0; i1 < element.Carta.Recordings.Count; i1++)
                 //{
                 //    Recordings i = element.Carta.Recordings[i1];

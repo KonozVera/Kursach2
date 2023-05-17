@@ -17,6 +17,7 @@ namespace Kursach2
         public Menu()
         {
             InitializeComponent();
+            this.listBox1.DataSource = Library.Clients.Values.ToList();
         }
 
         private void regButton_Click(object sender, EventArgs e)
@@ -25,6 +26,7 @@ namespace Kursach2
             Registration registration = new Registration();
             registration.ShowDialog();
             Show();
+            this.listBox1.DataSource = Library.Clients.Values.ToList();
             registration.Close();
         }
         private void burn_book_Button_Click(object sender, EventArgs e)
@@ -90,10 +92,7 @@ namespace Kursach2
         
         private void Menu_Load(object sender, EventArgs e)
         {
-            //this.Load += new EventHandler(Menu_Load);
-            this.listBox1.DataSource = Library.Clients.Values.ToList();
-            //listBox1 = Clients.ToString.Add(sender);
-            //string listbox1 = Library.Clients.ToString();
-        }   
+            
+        }
     }
 }

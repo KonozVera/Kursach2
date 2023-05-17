@@ -73,6 +73,7 @@
             // all_bookcheckedListBox
             // 
             this.all_bookcheckedListBox.FormattingEnabled = true;
+            this.all_bookcheckedListBox.HorizontalScrollbar = true;
             this.all_bookcheckedListBox.Location = new System.Drawing.Point(16, 145);
             this.all_bookcheckedListBox.Name = "all_bookcheckedListBox";
             this.all_bookcheckedListBox.Size = new System.Drawing.Size(1017, 140);

@@ -35,24 +35,27 @@ namespace Kursach2
                     case "TEACHER":
                         if (login_in_reg_Field.Text[0] == 'T')
                         {
-                            
+                            Clients clients = new Clients(nameBox.Text, surnameBox.Text, login_in_reg_Field.Text, (Roles)employmentComboBox1.SelectedIndex);
+                            Library.Add_Client(clients);
                             this.DialogResult = DialogResult.OK;
                         }
                         break;
                     case "STUDENT":
                         if (login_in_reg_Field.Text[0] == 'S')
+                        {
+                            Clients clients = new Clients(nameBox.Text, surnameBox.Text, login_in_reg_Field.Text, (Roles)employmentComboBox1.SelectedIndex);
+                            Library.Add_Client(clients);
                             this.DialogResult = DialogResult.OK;
+                        }
                         break;
                     default:
                         break;
-
                 }
-                errorProvider1.SetError(regButton, "Произошла ошибка!");
+                
             }
             else
             {
-                Clients clients = new Clients(nameBox.Text, surnameBox.Text, login_in_reg_Field.Text, (Roles)employmentComboBox1.SelectedIndex);
-                Library.Add_Client(clients);
+                errorProvider1.SetError(regButton, "Произошла ошибка!");
             }
         }
 

@@ -47,7 +47,7 @@ namespace Kursach2
 
         public override string ToString()
         {
-            return string.Format("Дата взятия книги: {0}  Дата возврата книги: {1} Книга: {2} ", taking_book.ToShortDateString(), returning_book.ToShortDateString(), book);
+            return string.Format("Дата взятия книги: {1}  Дата возврата книги: {0} Книга: {2} ", taking_book.ToShortDateString(), returning_book.ToShortDateString(), book);
         }
     }
 }

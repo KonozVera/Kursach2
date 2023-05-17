@@ -47,7 +47,7 @@ namespace Kursach2
                         return false;
                     }
 
-                    if (books[j].Number_of_copies < 1)
+                    if (books[j].Number_of_copies <= 1)
                     {
                         Books.Remove(books[j]);
                     }
@@ -56,7 +56,7 @@ namespace Kursach2
                         books[j].Number_of_copies--;
                     }
 
-                    break;
+                    //break;
                 }
             }
 
@@ -137,35 +137,35 @@ namespace Kursach2
             return null;
         }
 
-        private static bool Pass(Books book, Clients client)
+        private static void Pass(Books book, Clients client)
         {
-            bool flag = false;
-            DateTime returning_book = DateTime.Today;
             foreach (var book1 in Library.books)
             {
                 if (book.Key == book1.Key)
                 {
-                    book.Number_of_copies += 1;
-                    foreach (var recording in client.Carta.Recordings)
+                    if (book.Number_of_copies >= 0)
                     {
-                        if (recording.Books.Name.Equals(book.Name))
+                        book.Number_of_copies += 1;
+                        for (int i = 0; i < client.Carta.Recordings.Count; i++)
                         {
-                            recording.IsAvailable = true;
-                            flag = false;
+                            Recordings recording = client.Carta.Recordings[i];
+                            if (recording.Books.Name.Equals(book.Name))
+                            {
+                                client.Carta.Recordings.Remove(recording);
+                                //recording.Books.Number_of_copies -= 1;
+                            }
                         }
                     }
                 }
             }
-
-            return flag;
         }
         public static void Pass_Book(Books books, Clients client)
         {
-            if(!Pass(books, client))
-            {
-                Library.Add_Book(books.Key, books.name, books.author, books.date_of_publishing, books.Number_of_copies + 1);
-                Library.Pass(books, client);
-            }
+            Pass(books, client);
+            //{
+            //    Library.Add_Book(books.Key, books.name, books.author, books.date_of_publishing, books.Number_of_copies);
+            //    Library.Pass(books, client);
+            //}
         }
 
         public static bool NoHand(Books books)
@@ -193,6 +193,16 @@ namespace Kursach2
                     return true;
                 }
             }
+            return false;
+        }
+
+        public static bool ContainsBookInLibrary(int key)
+        {
+            foreach (var book in books)
+            {
+                if (book.Key == key) return true;
+            }
+
             return false;
         }
 

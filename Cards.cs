@@ -40,7 +40,9 @@ namespace Kursach2
 
         public override string ToString()
         {
-            return string.Format("Запись: {0}", recording);
+            string result = string.Empty;
+            foreach (var record in recording) result += record;
+            return string.Format("Запись: {0}", result);
         }
     }
 }

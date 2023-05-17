@@ -50,7 +50,7 @@ namespace Kursach2
 
         public override string ToString()
         {
-            return String.Format("Имя: {0} Фамилия: {1} Роль: {2}  Карта: {3}", this.Name, this.Surname, this.role, this.Carta);
+            return String.Format("Номер: {0} Имя: {1} Фамилия: {2} Роль: {3}  Карта: {4}",Carta.Number, this.Name, this.Surname, this.role, this.Carta);
         }
     }
 }

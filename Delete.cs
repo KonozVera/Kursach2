@@ -36,6 +36,7 @@ namespace Kursach2
         {
             int Key = Convert.ToInt32(index_textBox.Text);
             //Library.Pass_Book(books, client)
+            if (!Library.ContainsBookInLibrary(Key)) { MessageBox.Show("Такой книги в библиотеке нет!"); return; }
             if (Library.Delete_Book(Key))
             {
                 MessageBox.Show("Книгу успешно удалили!");
@@ -45,7 +46,9 @@ namespace Kursach2
                 th.Start();
             }
             else
+            {
                 MessageBox.Show("Книга есть у клиентов!");
+            }
             
         }
 
